@@ -42,5 +42,11 @@ data class Joke(
         val religious: Boolean,
         @Json(name = "sexist")
         val sexist: Boolean
-    ): Parcelable {}
+    ): Parcelable{
+        // function to check if any of the flags are set to true
+        fun areNotSet(): Boolean{
+            return !(explicit || nsfw || political || racist || religious || sexist)
+        }
+    }
 }
+
