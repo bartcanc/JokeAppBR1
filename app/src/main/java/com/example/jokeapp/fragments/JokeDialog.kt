@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import com.example.jokeapp.databinding.JokeDialogBinding
-import com.example.jokeapp.model.Joke
 
 class JokeDialog(val joke: Joke) : DialogFragment() {
     private lateinit var binding: JokeDialogBinding

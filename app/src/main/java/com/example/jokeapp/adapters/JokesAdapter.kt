@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.jokeapp.databinding.JokeListItemBinding
-import com.example.jokeapp.model.Joke
 
 // Adapter for the list of jokes using ListAdapter class for simplified list updates
 // The adapter takes a JokeClickListener interface as a parameter to handle the click events
