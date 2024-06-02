@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.jokeapp.R
 import com.example.jokeapp.adapters.CategoriesAdapter
 import com.example.jokeapp.databinding.FragmentCategoryListBinding
@@ -105,8 +106,14 @@ class CategoryListFragment : Fragment(), Callback<CategoriesResponse>,
         return emptyList()
     }
 
-    override fun onFailure(p0: Call<CategoriesResponse>, p1: Throwable) {
-        TODO("Not yet implemented")
+    // handle the failure of the network request
+    override fun onFailure(call: Call<CategoriesResponse>, t: Throwable) {
+        binding.pendingIndicator.visibility = View.GONE
+        Snackbar.make(
+            binding.root,
+            getString(R.string.retrofit_error_msg, t.message),
+            Snackbar.LENGTH_LONG
+        ).show()
     }
 
     // Navigate to the JokeListFragment when a category is clicked
